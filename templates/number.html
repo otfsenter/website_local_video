@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <title>{{ alias }}</title>
+
+
+    <script type="text/javascript"
+            src="{% static 'jslib/jquery-3.4.1.min.js' %}"></script>
+    <script type="text/javascript"
+            src="{% static 'jslib/bootstrap.min.js' %}"></script>
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'csslib/bootstrap.min.css' %}">
+    <link href="{% static 'csslib/video-js.css' %}" rel="stylesheet"/>
+    <script src="{% static 'jslib/video.min.js' %}"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="card text-white  bg-dark" style="max-width: 45rem;">
+        <div class="card-header">{{ alias }} 第 {{ number }} 集</div>
+        <div class="card-body">
+            <p class="card-text">
+
+
+                <video
+                        id="my-video"
+                        class="video-js"
+                        controls="true"
+                        webkit-playsinline="true"
+                        x5-video-player-type="h5"
+                        preload="auto"
+                        width="640"
+                        height="264"
+                        poster="/../media/{{ name }}/{{ number }}.png"
+                        data-setup="{}"
+                >
+                    <source src="/../media/{{ name }}/{{ number }}.mp4"
+                            type="video/mp4"/>
+
+                </video>
+
+
+            </p>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

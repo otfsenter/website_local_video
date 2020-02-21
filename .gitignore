@@ -1,0 +1,6 @@
+.idea/
+*.whl
+media/
+*.pyc
+*.pyd
+static/admin/
